@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Amazon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h5>Upload Files to S3</h5>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="buckets">Buckets</label>
+                    <select name="buckets" id="buckets" class="form-control">
+                        {{#each buckets}}
+                            <option value="{{this.Name}}">{{this.Name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="file">File</label>
+                    <input type="file" name="file" id="file" class="form-control-file" />
+                </div>
+                <input type="submit" value="Upload" id="upload" class="btn btn-primary">
+            </form>
+            <hr />
+            <table class="table table-bordered">
+                <tr>
+                    <td>Result</td>
+                    <td>Download</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/no-available.png" alt="no-image" id="image" width="150" height="100">
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-primary" id="link">
+                            Download
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="js/upload.js"></script>
+</body>
+</html>
