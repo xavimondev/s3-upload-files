@@ -16,5 +16,5 @@ Luego, renombras el archivo **example.env** por **.env** y completas todas las v
 Por último, ejecutas:
  
 ```bash
-node app.js
+npm start
 ```
